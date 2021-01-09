@@ -17,7 +17,7 @@ extension BaseCoordinator {
         get {
             guard let identifier: UUID = associatedObject(for: &identifierKey) else {
                 self.identifier = UUID()
-             S   return self.identifier
+                return self.identifier
             }
             return identifier
         }

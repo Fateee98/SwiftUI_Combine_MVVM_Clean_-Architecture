@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4928221825A952DB0082AE2B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928221725A952DB0082AE2B /* DetailView.swift */; };
+		4928222125A953940082AE2B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928222025A953940082AE2B /* DetailViewModel.swift */; };
+		4928222A25A957370082AE2B /* DetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928222925A957370082AE2B /* DetailViewCoordinator.swift */; };
 		4B8B769925A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B769825A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift */; };
 		4B8B769D25A8863600C39EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B769C25A8863600C39EA2 /* Assets.xcassets */; };
 		4B8B76A025A8863600C39EA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B769F25A8863600C39EA2 /* Preview Assets.xcassets */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4928221725A952DB0082AE2B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4928222025A953940082AE2B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		4928222925A957370082AE2B /* DetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCoordinator.swift; sourceTree = "<group>"; };
 		4B8B769525A8863400C39EA2 /* SwiftUI_MVVM_Clean_Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_MVVM_Clean_Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8B769825A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_MVVM_Clean_ArchitectureApp.swift; sourceTree = "<group>"; };
 		4B8B769C25A8863600C39EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +92,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4928221425A952BD0082AE2B /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				4928222825A9571D0082AE2B /* Coordinator */,
+				4928221F25A953850082AE2B /* ViewModel */,
+				4928221625A952CA0082AE2B /* View */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		4928221625A952CA0082AE2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4928221725A952DB0082AE2B /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4928221F25A953850082AE2B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4928222025A953940082AE2B /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4928222825A9571D0082AE2B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4928222925A957370082AE2B /* DetailViewCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		4B8B768C25A8863300C39EA2 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +250,7 @@
 		4B8B772B25A8D0E700C39EA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4928221425A952BD0082AE2B /* DetailView */,
 				4B8B76C625A8ADB600C39EA2 /* MainView */,
 			);
 			path = Views;
@@ -347,11 +388,14 @@
 				4B8B771425A8B9D200C39EA2 /* ViewModelProtocol.swift in Sources */,
 				4B8B770C25A8B97800C39EA2 /* MainViewModel.swift in Sources */,
 				4B8B76DF25A8B09C00C39EA2 /* Coordinator.swift in Sources */,
+				4928221825A952DB0082AE2B /* DetailView.swift in Sources */,
 				4B8B76F425A8B10E00C39EA2 /* AssociatedObject.swift in Sources */,
 				4B8B76D925A8B07200C39EA2 /* AppCoordinator.swift in Sources */,
 				4B8B76CC25A8AE9A00C39EA2 /* MainView.swift in Sources */,
 				4B8B770325A8B55400C39EA2 /* MainViewCoordinator.swift in Sources */,
+				4928222A25A957370082AE2B /* DetailViewCoordinator.swift in Sources */,
 				4B8B773325A8D2F800C39EA2 /* NavigationHelper.swift in Sources */,
+				4928222125A953940082AE2B /* DetailViewModel.swift in Sources */,
 				4B8B769925A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

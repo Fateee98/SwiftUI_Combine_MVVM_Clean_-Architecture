@@ -8,17 +8,20 @@
 import Foundation
 import SwiftUI
 
+protocol MainRouteProtocol: Coordinator {}
+
 public enum MainViewRoute {
     case detail
 }
 
-extension MainViewCoordinator {
-    func triggerNavigation(screen: MainViewRoute) {
-        
+extension MainRouteProtocol {
+    func triggerNavigation(screen: MainViewRoute, isPush: Binding<Bool>) -> some View {
+        let coordinator = DetailViewCoordinator<C>(isPush: isPush)
+        return coordinate(to: coordinator)
     }
 }
 
-final class MainViewCoordinator<C: Coordinator>: Coordinator {
+final class MainViewCoordinator<C: Coordinator>: MainRouteProtocol {
     
     weak var window: UIWindow?
     
@@ -40,7 +43,7 @@ final class MainViewCoordinator<C: Coordinator>: Coordinator {
         return EmptyView()
     }
     
-    func make<C: Coordinator>(router: C) -> some View {
+    func make<C: MainRouteProtocol>(router: C) -> some View {
         let viewModel = MainViewModel(router: router)
         let view = MainView(viewModel: viewModel)
         return view

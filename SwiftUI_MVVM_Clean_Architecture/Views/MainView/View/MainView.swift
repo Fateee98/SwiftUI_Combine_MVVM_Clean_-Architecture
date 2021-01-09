@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView<T: ViewModelProtocol>: View {
+struct MainView<T: MainViewModelProtocol>: View {
     
     @ObservedObject private var viewModel: T
     
@@ -16,22 +16,12 @@ struct MainView<T: ViewModelProtocol>: View {
     }
     
     var body: some View {
-        Button(action: {
-            
-        }) {
-            Text("Button title")
+        Group {
+            NavigationButton(contentView: Text("Push to detail"),
+                             navigationView: { isPresented in
+                                self.viewModel.onTapButton(isPush: isPresented)
+                             })
+                .foregroundColor(Color.blue)
         }
     }
 }
-
-//extension MainView: BindableType {
-//    func bindViewModel() {
-//
-//    }
-//}
-
-//struct MainView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainView(viewModel: <#_#>)
-//    }
-//}

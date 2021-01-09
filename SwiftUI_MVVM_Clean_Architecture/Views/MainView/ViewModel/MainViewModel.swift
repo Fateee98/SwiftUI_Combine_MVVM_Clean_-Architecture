@@ -6,8 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
-final class MainViewModel<C: Coordinator> {
+protocol MainViewModelProtocol: ViewModelProtocol {
+    associatedtype V: View
+    func onTapButton(isPush: Binding<Bool>) -> V
+}
+
+final class MainViewModel<C: MainRouteProtocol> {
     
     private(set) weak var router: C?
     
@@ -15,16 +21,14 @@ final class MainViewModel<C: Coordinator> {
         self.router = router
     }
     
+    public func onTapButton(isPush: Binding<Bool>) -> some View {
+        return router?.triggerNavigation(screen: .detail, isPush: isPush)
+    }
 }
 
-extension MainViewModel: ViewModelProtocol {
-    struct Input {
-    }
+extension MainViewModel: MainViewModelProtocol {
     
-    struct Output {
-    }
-    
-    func transform(input: Input) -> Output {
-        return Output()
-    }
+//    func transform(input: Input) -> Output {
+//        return Output()
+//    }
 }

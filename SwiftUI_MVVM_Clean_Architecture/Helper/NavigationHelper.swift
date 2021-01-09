@@ -50,11 +50,11 @@ struct NavigationLinkWrapper<T: View>: View {
     typealias DestinationView = T
     
     var destination: T
-    @Binding var isPresented: Bool
+    @Binding var isPush: Bool
     var isDetailLink: Bool = true
     
     var body: some View {
-        NavigationLink(destination: destination, isActive: $isPresented) {
+        NavigationLink(destination: destination, isActive: $isPush) {
             EmptyView()
         }.isDetailLink(isDetailLink)
     }
