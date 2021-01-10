@@ -23,6 +23,9 @@
 		4B8B770C25A8B97800C39EA2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B770B25A8B97800C39EA2 /* MainViewModel.swift */; };
 		4B8B771425A8B9D200C39EA2 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B771325A8B9D200C39EA2 /* ViewModelProtocol.swift */; };
 		4B8B773325A8D2F800C39EA2 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B773225A8D2F800C39EA2 /* NavigationHelper.swift */; };
+		4B8B77BC25AB4E0200C39EA2 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B77BB25AB4E0200C39EA2 /* Navigation.swift */; };
+		4B8B77C125AB4E3800C39EA2 /* DestinationHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B77C025AB4E3800C39EA2 /* DestinationHostingController.swift */; };
+		4B8B77C625AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B77C525AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		4B8B770B25A8B97800C39EA2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4B8B771325A8B9D200C39EA2 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		4B8B773225A8D2F800C39EA2 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		4B8B77BB25AB4E0200C39EA2 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		4B8B77C025AB4E3800C39EA2 /* DestinationHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationHostingController.swift; sourceTree = "<group>"; };
+		4B8B77C525AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +225,9 @@
 			children = (
 				4B8B76F325A8B10E00C39EA2 /* AssociatedObject.swift */,
 				4B8B773225A8D2F800C39EA2 /* NavigationHelper.swift */,
+				4B8B77BB25AB4E0200C39EA2 /* Navigation.swift */,
+				4B8B77C025AB4E3800C39EA2 /* DestinationHostingController.swift */,
+				4B8B77C525AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -394,9 +403,12 @@
 				4B8B76CC25A8AE9A00C39EA2 /* MainView.swift in Sources */,
 				4B8B770325A8B55400C39EA2 /* MainViewCoordinator.swift in Sources */,
 				4928222A25A957370082AE2B /* DetailViewCoordinator.swift in Sources */,
+				4B8B77BC25AB4E0200C39EA2 /* Navigation.swift in Sources */,
+				4B8B77C625AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift in Sources */,
 				4B8B773325A8D2F800C39EA2 /* NavigationHelper.swift in Sources */,
 				4928222125A953940082AE2B /* DetailViewModel.swift in Sources */,
 				4B8B769925A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift in Sources */,
+				4B8B77C125AB4E3800C39EA2 /* DestinationHostingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

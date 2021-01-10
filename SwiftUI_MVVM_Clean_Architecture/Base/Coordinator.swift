@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+protocol ViewRouteEnum {}
+
 protocol BaseCoordinator: AssociatedObject {
     func stop()
 }
@@ -42,12 +44,15 @@ extension BaseCoordinator {
     fileprivate func free<T: Coordinator>(child coordinator: T) {
         children.removeValue(forKey: coordinator.identifier)
     }
+    
+    public func prepareTransition(for screen: ViewRouteEnum, isTransaction: Binding<Bool>) -> AnyView {
+        fatalError("Please override the \(#function) method.")
+    }
 }
 
 protocol Coordinator: BaseCoordinator {
-    associatedtype V: View
     associatedtype C: Coordinator
-    func start() -> V
+    func start() -> AnyView
     func shouldStop()
 }
 

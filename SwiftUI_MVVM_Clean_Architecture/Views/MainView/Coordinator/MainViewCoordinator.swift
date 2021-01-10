@@ -10,42 +10,33 @@ import SwiftUI
 
 protocol MainRouteProtocol: Coordinator {}
 
-public enum MainViewRoute {
+public enum MainViewRoute: ViewRouteEnum {
     case detail
+    case detailRed
 }
 
 extension MainRouteProtocol {
-    func triggerNavigation(screen: MainViewRoute, isPush: Binding<Bool>) -> some View {
-        let coordinator = DetailViewCoordinator<C>(isPush: isPush)
-        return coordinate(to: coordinator)
+    
+    func prepareTransition(for screen: MainViewRoute, isTransaction: Binding<Bool>) -> AnyView {
+        switch screen {
+        case .detail:
+            let coordinator = DetailViewCoordinator<C>(isPush: isTransaction)
+            return AnyView(coordinate(to: coordinator))
+        default:
+            return AnyView(EmptyView())
+        }
     }
 }
 
-final class MainViewCoordinator<C: Coordinator>: MainRouteProtocol {
-    
-    weak var window: UIWindow?
-    
-    public init(window: UIWindow?) {
-        self.window = window
-    }
-    
-    deinit {
-        print("deinit cordinator \(identifier)")
-    }
-    
-    @discardableResult
-    func start() -> some View {
-        let view = make(router: self)
-        let navigation = NavigationView { view }
-        let hosting = UIHostingController(rootView: navigation)
-        window?.rootViewController = hosting
-        window?.makeKeyAndVisible()
-        return EmptyView()
-    }
-    
-    func make<C: MainRouteProtocol>(router: C) -> some View {
-        let viewModel = MainViewModel(router: router)
-        let view = MainView(viewModel: viewModel)
-        return view
-    }
-}
+//final class NavigationMainCoordinator<C: Coordinator>: MainRouteProtocol {
+//    private var isNavigation: Binding<Bool>
+//
+//    init(isNavigation: Binding<Bool>) {
+//        self.isNavigation = isNavigation
+//    }
+//
+//    @discardableResult
+//    func start() -> AnyView {
+//
+//    }
+//}

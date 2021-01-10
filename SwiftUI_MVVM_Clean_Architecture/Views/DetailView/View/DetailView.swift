@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct DetailView<T: ViewModelProtocol>: View {
+struct DetailView: View {
     
-    @ObservedObject private var viewModel: T
+    @ObservedObject private var viewModel: DetailViewModel
     
-    init(viewModel: T) {
+    init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
     }
     

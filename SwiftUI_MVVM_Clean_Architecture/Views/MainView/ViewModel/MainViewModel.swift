@@ -7,28 +7,49 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
-protocol MainViewModelProtocol: ViewModelProtocol {
-    associatedtype V: View
-    func onTapButton(isPush: Binding<Bool>) -> V
+protocol MainViewModelProtocol: ViewModelProtocol {}
+
+struct MainViewState {
+    var text: String
+    var pushToDetail: AnyView
+    var isPushDetail: Void
 }
 
-final class MainViewModel<C: MainRouteProtocol> {
+struct MainInput {
+    let publisher = PassthroughSubject<String, Never>()
+    let push = PassthroughSubject<Void, Never>()
+}
+
+final class MainViewModel {
+    @EnvironmentObject var navigation: Navigation
+    @Published var state: MainViewState
+    private var disposeStore = Set<AnyCancellable>()
     
-    private(set) weak var router: C?
-    
-    init(router: C) {
-        self.router = router
-    }
-    
-    public func onTapButton(isPush: Binding<Bool>) -> some View {
-        return router?.triggerNavigation(screen: .detail, isPush: isPush)
+    init() {
+        self.state = MainViewState(text: "",
+                                   pushToDetail: AnyView(EmptyView()),
+                                   isPushDetail: ())
     }
 }
 
 extension MainViewModel: MainViewModelProtocol {
+    func onNavigation(_ input: ViewRouteEnum, _ state: Binding<Bool>) -> AnyView {
+        return AnyView(EmptyView())
+    }
     
-//    func transform(input: Input) -> Output {
-//        return Output()
-//    }
+    
+    func transform(_ input: MainInput) {
+        input.publisher
+            .sink { (text) in
+                print(text)
+                self.state.text = text
+            }.store(in: &disposeStore)
+        
+        input.push
+            .sink { _ in
+                self.navigation.pushView(AnyView(DetailView(viewModel: DetailViewModel())))
+            }.store(in: &disposeStore)
+    }
 }

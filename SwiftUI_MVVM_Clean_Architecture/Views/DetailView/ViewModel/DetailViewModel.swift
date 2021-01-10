@@ -6,25 +6,34 @@
 //
 
 import Foundation
+import SwiftUI
 
-final class DetailViewModel<C: Coordinator> {
+protocol DetailViewModelProtocol: ViewModelProtocol {}
+
+final class DetailViewModel {
     
-    private(set) weak var router: C?
+    struct DetailViewState {
+    }
+
+    enum DetailViewInput {
+        case pop
+    }
     
-    init(router: C) {
-        self.router = router
+    @Published var state: DetailViewState
+//    private(set) weak var router: C?
+    
+    init() {
+        self.state = DetailViewState()
+//        self.router = router
     }
     
 }
 
 extension DetailViewModel: ViewModelProtocol {
-//    struct Input {
-//    }
-//    
-//    struct Output {
-//    }
-//    
-//    func transform(input: Input) -> Output {
-//        return Output()
-//    }
+    func onNavigation(_ input: ViewRouteEnum, _ state: Binding<Bool>) -> AnyView {
+        return AnyView(EmptyView())
+    }
+    
+    func transform(_ input: DetailViewInput) {
+    }
 }

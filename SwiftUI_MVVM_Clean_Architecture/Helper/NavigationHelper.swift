@@ -15,19 +15,17 @@ extension View {
 }
 
 struct NavigationButton<CV: View, NV: View>: View {
-    @State private var isPresented = false
+    @State private var isNavigation = false
     
     var contentView: CV
     var navigationView: (Binding<Bool>) -> NV
     
     var body: some View {
         Button(action: {
-            self.isPresented = true
+            self.isNavigation = true
         }) {
             contentView
-                .withNavigation(to:
-                    navigationView($isPresented)
-                )
+                .withNavigation(to: navigationView($isNavigation))
         }
     }
 }
