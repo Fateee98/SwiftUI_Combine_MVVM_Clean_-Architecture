@@ -12,13 +12,6 @@ public protocol DestinationView {
 }
 
 open class DestinationHostingController<T: View>: UIHostingController<T> {
-    open override func willMove(toParent parent: UIViewController?){
-        super.willMove(toParent: parent)
-        
-        if parent == nil{
-            self.navigationController?.isToolbarHidden = false
-        }
-    }
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

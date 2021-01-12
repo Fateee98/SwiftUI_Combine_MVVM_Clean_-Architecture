@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DetailView: View {
-    
     @ObservedObject private var viewModel: DetailViewModel
     
     init(viewModel: DetailViewModel) {
@@ -17,7 +16,7 @@ struct DetailView: View {
     
     var body: some View {
         Button(action: {
-            
+            navigation?.popToRootView()
         }) {
             Text("Detail View")
         }

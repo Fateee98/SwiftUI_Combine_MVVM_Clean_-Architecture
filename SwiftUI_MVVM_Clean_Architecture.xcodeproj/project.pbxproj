@@ -3,26 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4928221825A952DB0082AE2B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928221725A952DB0082AE2B /* DetailView.swift */; };
 		4928222125A953940082AE2B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928222025A953940082AE2B /* DetailViewModel.swift */; };
 		4928222A25A957370082AE2B /* DetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928222925A957370082AE2B /* DetailViewCoordinator.swift */; };
+		495C9E0E25AD3ED2004ABE4C /* NavigatorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E0D25AD3ED2004ABE4C /* NavigatorRoute.swift */; };
+		495C9E1C25AD7021004ABE4C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E1B25AD7021004ABE4C /* Constant.swift */; };
+		495C9E2125AD741A004ABE4C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E2025AD741A004ABE4C /* BaseRequest.swift */; };
+		495C9E2A25AD7520004ABE4C /* GitHubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E2925AD7520004ABE4C /* GitHubRouter.swift */; };
+		495C9E3025AD75AF004ABE4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 495C9E2F25AD75AF004ABE4C /* Alamofire */; };
+		495C9E5425AD78F0004ABE4C /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E5325AD78F0004ABE4C /* ApiConfig.swift */; };
 		4B8B769925A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B769825A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift */; };
 		4B8B769D25A8863600C39EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B769C25A8863600C39EA2 /* Assets.xcassets */; };
 		4B8B76A025A8863600C39EA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B769F25A8863600C39EA2 /* Preview Assets.xcassets */; };
 		4B8B76AB25A8863600C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B76AA25A8863600C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureTests.swift */; };
 		4B8B76B625A8863600C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B76B525A8863600C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureUITests.swift */; };
 		4B8B76CC25A8AE9A00C39EA2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B76CB25A8AE9A00C39EA2 /* MainView.swift */; };
-		4B8B76D925A8B07200C39EA2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B76D825A8B07200C39EA2 /* AppCoordinator.swift */; };
 		4B8B76DF25A8B09C00C39EA2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B76DE25A8B09C00C39EA2 /* Coordinator.swift */; };
 		4B8B76F425A8B10E00C39EA2 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B76F325A8B10E00C39EA2 /* AssociatedObject.swift */; };
 		4B8B770325A8B55400C39EA2 /* MainViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B770225A8B55400C39EA2 /* MainViewCoordinator.swift */; };
 		4B8B770C25A8B97800C39EA2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B770B25A8B97800C39EA2 /* MainViewModel.swift */; };
 		4B8B771425A8B9D200C39EA2 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B771325A8B9D200C39EA2 /* ViewModelProtocol.swift */; };
-		4B8B773325A8D2F800C39EA2 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B773225A8D2F800C39EA2 /* NavigationHelper.swift */; };
 		4B8B77BC25AB4E0200C39EA2 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B77BB25AB4E0200C39EA2 /* Navigation.swift */; };
 		4B8B77C125AB4E3800C39EA2 /* DestinationHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B77C025AB4E3800C39EA2 /* DestinationHostingController.swift */; };
 		4B8B77C625AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B77C525AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift */; };
@@ -49,6 +53,11 @@
 		4928221725A952DB0082AE2B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4928222025A953940082AE2B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		4928222925A957370082AE2B /* DetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCoordinator.swift; sourceTree = "<group>"; };
+		495C9E0D25AD3ED2004ABE4C /* NavigatorRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorRoute.swift; sourceTree = "<group>"; };
+		495C9E1B25AD7021004ABE4C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		495C9E2025AD741A004ABE4C /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		495C9E2925AD7520004ABE4C /* GitHubRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRouter.swift; sourceTree = "<group>"; };
+		495C9E5325AD78F0004ABE4C /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		4B8B769525A8863400C39EA2 /* SwiftUI_MVVM_Clean_Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_MVVM_Clean_Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8B769825A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_MVVM_Clean_ArchitectureApp.swift; sourceTree = "<group>"; };
 		4B8B769C25A8863600C39EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,13 +70,11 @@
 		4B8B76B525A8863600C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_MVVM_Clean_ArchitectureUITests.swift; sourceTree = "<group>"; };
 		4B8B76B725A8863600C39EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B8B76CB25A8AE9A00C39EA2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		4B8B76D825A8B07200C39EA2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4B8B76DE25A8B09C00C39EA2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4B8B76F325A8B10E00C39EA2 /* AssociatedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
 		4B8B770225A8B55400C39EA2 /* MainViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCoordinator.swift; sourceTree = "<group>"; };
 		4B8B770B25A8B97800C39EA2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4B8B771325A8B9D200C39EA2 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
-		4B8B773225A8D2F800C39EA2 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		4B8B77BB25AB4E0200C39EA2 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		4B8B77C025AB4E3800C39EA2 /* DestinationHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationHostingController.swift; sourceTree = "<group>"; };
 		4B8B77C525AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleConfiguration.swift; sourceTree = "<group>"; };
@@ -78,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495C9E3025AD75AF004ABE4C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +140,68 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		4928236D25ABF4C90082AE2B /* NavigationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4B8B76F325A8B10E00C39EA2 /* AssociatedObject.swift */,
+				4B8B76DE25A8B09C00C39EA2 /* Coordinator.swift */,
+				4B8B77BB25AB4E0200C39EA2 /* Navigation.swift */,
+				4B8B77C025AB4E3800C39EA2 /* DestinationHostingController.swift */,
+				4B8B77C525AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift */,
+				495C9E0D25AD3ED2004ABE4C /* NavigatorRoute.swift */,
+			);
+			path = NavigationHelper;
+			sourceTree = "<group>";
+		};
+		495C9E1A25AD7002004ABE4C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				495C9E1B25AD7021004ABE4C /* Constant.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		495C9E2525AD741F004ABE4C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				495C9E2025AD741A004ABE4C /* BaseRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		495C9E2625AD7428004ABE4C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B8B771325A8B9D200C39EA2 /* ViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		495C9E2725AD7507004ABE4C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				495C9E5225AD78E6004ABE4C /* Config */,
+				495C9E2825AD7511004ABE4C /* Router */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		495C9E2825AD7511004ABE4C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				495C9E2925AD7520004ABE4C /* GitHubRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		495C9E5225AD78E6004ABE4C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				495C9E5325AD78F0004ABE4C /* ApiConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		4B8B768C25A8863300C39EA2 = {
 			isa = PBXGroup;
 			children = (
@@ -155,9 +225,9 @@
 		4B8B769725A8863400C39EA2 /* SwiftUI_MVVM_Clean_Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				495C9E2725AD7507004ABE4C /* Network */,
 				4B8B772B25A8D0E700C39EA2 /* Views */,
 				4B8B76E625A8B0DB00C39EA2 /* Helper */,
-				4B8B76DD25A8B09000C39EA2 /* Base */,
 				4B8B76C725A8ADC100C39EA2 /* App */,
 				4B8B769C25A8863600C39EA2 /* Assets.xcassets */,
 				4B8B76A125A8863600C39EA2 /* Info.plist */,
@@ -206,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				4B8B769825A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift */,
-				4B8B76D825A8B07200C39EA2 /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -214,8 +283,8 @@
 		4B8B76DD25A8B09000C39EA2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				4B8B76DE25A8B09C00C39EA2 /* Coordinator.swift */,
-				4B8B771325A8B9D200C39EA2 /* ViewModelProtocol.swift */,
+				495C9E2625AD7428004ABE4C /* ViewModel */,
+				495C9E2525AD741F004ABE4C /* Network */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -223,11 +292,9 @@
 		4B8B76E625A8B0DB00C39EA2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				4B8B76F325A8B10E00C39EA2 /* AssociatedObject.swift */,
-				4B8B773225A8D2F800C39EA2 /* NavigationHelper.swift */,
-				4B8B77BB25AB4E0200C39EA2 /* Navigation.swift */,
-				4B8B77C025AB4E3800C39EA2 /* DestinationHostingController.swift */,
-				4B8B77C525AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift */,
+				495C9E1A25AD7002004ABE4C /* Extension */,
+				4B8B76DD25A8B09000C39EA2 /* Base */,
+				4928236D25ABF4C90082AE2B /* NavigationHelper */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -281,6 +348,9 @@
 			dependencies = (
 			);
 			name = SwiftUI_MVVM_Clean_Architecture;
+			packageProductDependencies = (
+				495C9E2F25AD75AF004ABE4C /* Alamofire */,
+			);
 			productName = SwiftUI_MVVM_Clean_Architecture;
 			productReference = 4B8B769525A8863400C39EA2 /* SwiftUI_MVVM_Clean_Architecture.app */;
 			productType = "com.apple.product-type.application";
@@ -352,6 +422,9 @@
 				Base,
 			);
 			mainGroup = 4B8B768C25A8863300C39EA2;
+			packageReferences = (
+				495C9E2E25AD75AF004ABE4C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4B8B769625A8863400C39EA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -394,19 +467,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495C9E2125AD741A004ABE4C /* BaseRequest.swift in Sources */,
 				4B8B771425A8B9D200C39EA2 /* ViewModelProtocol.swift in Sources */,
 				4B8B770C25A8B97800C39EA2 /* MainViewModel.swift in Sources */,
+				495C9E1C25AD7021004ABE4C /* Constant.swift in Sources */,
 				4B8B76DF25A8B09C00C39EA2 /* Coordinator.swift in Sources */,
 				4928221825A952DB0082AE2B /* DetailView.swift in Sources */,
 				4B8B76F425A8B10E00C39EA2 /* AssociatedObject.swift in Sources */,
-				4B8B76D925A8B07200C39EA2 /* AppCoordinator.swift in Sources */,
 				4B8B76CC25A8AE9A00C39EA2 /* MainView.swift in Sources */,
+				495C9E5425AD78F0004ABE4C /* ApiConfig.swift in Sources */,
 				4B8B770325A8B55400C39EA2 /* MainViewCoordinator.swift in Sources */,
+				495C9E0E25AD3ED2004ABE4C /* NavigatorRoute.swift in Sources */,
 				4928222A25A957370082AE2B /* DetailViewCoordinator.swift in Sources */,
 				4B8B77BC25AB4E0200C39EA2 /* Navigation.swift in Sources */,
 				4B8B77C625AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift in Sources */,
-				4B8B773325A8D2F800C39EA2 /* NavigationHelper.swift in Sources */,
 				4928222125A953940082AE2B /* DetailViewModel.swift in Sources */,
+				495C9E2A25AD7520004ABE4C /* GitHubRouter.swift in Sources */,
 				4B8B769925A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift in Sources */,
 				4B8B77C125AB4E3800C39EA2 /* DestinationHostingController.swift in Sources */,
 			);
@@ -724,6 +800,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		495C9E2E25AD75AF004ABE4C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		495C9E2F25AD75AF004ABE4C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 495C9E2E25AD75AF004ABE4C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B8B768D25A8863300C39EA2 /* Project object */;
 }

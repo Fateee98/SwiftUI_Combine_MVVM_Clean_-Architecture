@@ -20,20 +20,16 @@ final class DetailViewModel {
     }
     
     @Published var state: DetailViewState
-//    private(set) weak var router: C?
     
     init() {
         self.state = DetailViewState()
-//        self.router = router
     }
     
 }
 
 extension DetailViewModel: ViewModelProtocol {
-    func onNavigation(_ input: ViewRouteEnum, _ state: Binding<Bool>) -> AnyView {
-        return AnyView(EmptyView())
-    }
     
     func transform(_ input: DetailViewInput) {
+        
     }
 }

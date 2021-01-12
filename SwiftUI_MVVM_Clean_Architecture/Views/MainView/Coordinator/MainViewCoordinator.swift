@@ -7,36 +7,21 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
-protocol MainRouteProtocol: Coordinator {}
-
-public enum MainViewRoute: ViewRouteEnum {
+public enum MainRounte: BaseNavigatorEnum {
     case detail
     case detailRed
 }
 
-extension MainRouteProtocol {
+final class MainViewCoordinator: BaseNavigatorRoute<MainRounte> {
     
-    func prepareTransition(for screen: MainViewRoute, isTransaction: Binding<Bool>) -> AnyView {
-        switch screen {
+    override func prepareTransition(for route: MainRounte) {
+        switch route {
         case .detail:
-            let coordinator = DetailViewCoordinator<C>(isPush: isTransaction)
-            return AnyView(coordinate(to: coordinator))
-        default:
-            return AnyView(EmptyView())
+//            navigation?.presentOnRoot(AnyView(DetailView(viewModel: DetailViewModel())))
+            navigation?.pushView(AnyView(DetailView(viewModel: DetailViewModel())))
+        default: break
         }
     }
 }
-
-//final class NavigationMainCoordinator<C: Coordinator>: MainRouteProtocol {
-//    private var isNavigation: Binding<Bool>
-//
-//    init(isNavigation: Binding<Bool>) {
-//        self.isNavigation = isNavigation
-//    }
-//
-//    @discardableResult
-//    func start() -> AnyView {
-//
-//    }
-//}

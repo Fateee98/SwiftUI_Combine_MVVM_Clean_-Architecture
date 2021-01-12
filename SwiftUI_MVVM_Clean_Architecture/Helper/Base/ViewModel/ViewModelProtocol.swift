@@ -14,5 +14,4 @@ protocol ViewModelProtocol: ObservableObject where ObjectWillChangePublisher.Out
     
     var state: State { get }
     func transform(_ input: Input)
-    func onNavigation(_ input: ViewRouteEnum, _ state: Binding<Bool>) -> AnyView
 }

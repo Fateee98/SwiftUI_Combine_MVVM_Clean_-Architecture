@@ -11,23 +11,27 @@ import Combine
 
 protocol MainViewModelProtocol: ViewModelProtocol {}
 
-struct MainViewState {
-    var text: String
-    var pushToDetail: AnyView
-    var isPushDetail: Void
-}
-
-struct MainInput {
-    let publisher = PassthroughSubject<String, Never>()
-    let push = PassthroughSubject<Void, Never>()
-}
-
 final class MainViewModel {
-    @EnvironmentObject var navigation: Navigation
+    
+    struct MainViewState {
+        var text: String
+        var pushToDetail: AnyView
+        var isPushDetail: Void
+    }
+    
+    struct MainInput {
+        let publisher = PassthroughSubject<String, Never>()
+        let push = PassthroughSubject<Void, Never>()
+    }
+    
     @Published var state: MainViewState
+    
     private var disposeStore = Set<AnyCancellable>()
     
-    init() {
+    private var router: BaseNavigatorRoute<MainRounte>
+    
+    init(router: BaseNavigatorRoute<MainRounte>) {
+        self.router = router
         self.state = MainViewState(text: "",
                                    pushToDetail: AnyView(EmptyView()),
                                    isPushDetail: ())
@@ -35,11 +39,6 @@ final class MainViewModel {
 }
 
 extension MainViewModel: MainViewModelProtocol {
-    func onNavigation(_ input: ViewRouteEnum, _ state: Binding<Bool>) -> AnyView {
-        return AnyView(EmptyView())
-    }
-    
-    
     func transform(_ input: MainInput) {
         input.publisher
             .sink { (text) in
@@ -48,8 +47,8 @@ extension MainViewModel: MainViewModelProtocol {
             }.store(in: &disposeStore)
         
         input.push
-            .sink { _ in
-                self.navigation.pushView(AnyView(DetailView(viewModel: DetailViewModel())))
+            .sink { [weak self] _ in
+                self?.router.trigger(.detail)
             }.store(in: &disposeStore)
     }
 }

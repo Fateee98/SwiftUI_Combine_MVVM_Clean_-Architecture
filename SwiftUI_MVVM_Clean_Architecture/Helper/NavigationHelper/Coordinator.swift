@@ -44,10 +44,6 @@ extension BaseCoordinator {
     fileprivate func free<T: Coordinator>(child coordinator: T) {
         children.removeValue(forKey: coordinator.identifier)
     }
-    
-    public func prepareTransition(for screen: ViewRouteEnum, isTransaction: Binding<Bool>) -> AnyView {
-        fatalError("Please override the \(#function) method.")
-    }
 }
 
 protocol Coordinator: BaseCoordinator {

@@ -30,27 +30,23 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 //MARK: - SceneDelegate
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    var navigation: Navigation?
-//    var coordinator: AppCoordinator?
+    //    var coordinator: AppCoordinator?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let viewModel = MainViewModel()
+        let coordinator = MainViewCoordinator()
+        let viewModel = MainViewModel(router: coordinator)
         let mainView = NavigationView { MainView(viewModel: viewModel) }
         
         if let windowScene = scene as? UIWindowScene {
             let rootWindow = UIWindow(windowScene: windowScene)
-            let navigation = Navigation(window: rootWindow)
-            let rootView = UIHostingController(rootView: mainView.environmentObject(navigation))
-
+            let navigationRoot = Navigation(window: rootWindow)
+            let rootView = UIHostingController(rootView: mainView.environmentObject(navigationRoot))
+            
             rootWindow.rootViewController = rootView
-
+            
             self.window = rootWindow
-            self.navigation = navigation
+            navigation = navigationRoot
             rootWindow.makeKeyAndVisible()
-//            let coordinator = AppCoordinator(window: window)
-//            coordinator.start()
-//            self.window = window
-//            self.coordinator = coordinator
         }
     }
 }
