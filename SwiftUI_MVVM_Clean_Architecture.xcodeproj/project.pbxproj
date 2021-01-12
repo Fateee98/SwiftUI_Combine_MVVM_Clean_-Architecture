@@ -13,9 +13,11 @@
 		495C9E0E25AD3ED2004ABE4C /* NavigatorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E0D25AD3ED2004ABE4C /* NavigatorRoute.swift */; };
 		495C9E1C25AD7021004ABE4C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E1B25AD7021004ABE4C /* Constant.swift */; };
 		495C9E2125AD741A004ABE4C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E2025AD741A004ABE4C /* BaseRequest.swift */; };
-		495C9E2A25AD7520004ABE4C /* GitHubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E2925AD7520004ABE4C /* GitHubRouter.swift */; };
+		495C9E2A25AD7520004ABE4C /* DummyAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E2925AD7520004ABE4C /* DummyAPIRouter.swift */; };
 		495C9E3025AD75AF004ABE4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 495C9E2F25AD75AF004ABE4C /* Alamofire */; };
 		495C9E5425AD78F0004ABE4C /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E5325AD78F0004ABE4C /* ApiConfig.swift */; };
+		495C9E5A25AD85D8004ABE4C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E5925AD85D8004ABE4C /* UserModel.swift */; };
+		495C9E7825AD883F004ABE4C /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 495C9E7725AD883F004ABE4C /* ObjectMapper */; };
 		4B8B769925A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B769825A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift */; };
 		4B8B769D25A8863600C39EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B769C25A8863600C39EA2 /* Assets.xcassets */; };
 		4B8B76A025A8863600C39EA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B769F25A8863600C39EA2 /* Preview Assets.xcassets */; };
@@ -56,8 +58,9 @@
 		495C9E0D25AD3ED2004ABE4C /* NavigatorRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorRoute.swift; sourceTree = "<group>"; };
 		495C9E1B25AD7021004ABE4C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		495C9E2025AD741A004ABE4C /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
-		495C9E2925AD7520004ABE4C /* GitHubRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRouter.swift; sourceTree = "<group>"; };
+		495C9E2925AD7520004ABE4C /* DummyAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyAPIRouter.swift; sourceTree = "<group>"; };
 		495C9E5325AD78F0004ABE4C /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		495C9E5925AD85D8004ABE4C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4B8B769525A8863400C39EA2 /* SwiftUI_MVVM_Clean_Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_MVVM_Clean_Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8B769825A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_MVVM_Clean_ArchitectureApp.swift; sourceTree = "<group>"; };
 		4B8B769C25A8863600C39EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495C9E7825AD883F004ABE4C /* ObjectMapper in Frameworks */,
 				495C9E3025AD75AF004ABE4C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,14 +165,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		495C9E2525AD741F004ABE4C /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				495C9E2025AD741A004ABE4C /* BaseRequest.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		495C9E2625AD7428004ABE4C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +176,7 @@
 		495C9E2725AD7507004ABE4C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				495C9E8225AD89C9004ABE4C /* Request */,
 				495C9E5225AD78E6004ABE4C /* Config */,
 				495C9E2825AD7511004ABE4C /* Router */,
 			);
@@ -189,7 +186,7 @@
 		495C9E2825AD7511004ABE4C /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				495C9E2925AD7520004ABE4C /* GitHubRouter.swift */,
+				495C9E2925AD7520004ABE4C /* DummyAPIRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -200,6 +197,22 @@
 				495C9E5325AD78F0004ABE4C /* ApiConfig.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		495C9E5825AD85CD004ABE4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				495C9E5925AD85D8004ABE4C /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		495C9E8225AD89C9004ABE4C /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				495C9E2025AD741A004ABE4C /* BaseRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		4B8B768C25A8863300C39EA2 = {
@@ -265,6 +278,7 @@
 		4B8B76C625A8ADB600C39EA2 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				495C9E5825AD85CD004ABE4C /* Model */,
 				4B8B770A25A8B96B00C39EA2 /* ViewModel */,
 				4B8B770125A8B53A00C39EA2 /* Coordinator */,
 				4B8B770025A8B52F00C39EA2 /* View */,
@@ -284,7 +298,6 @@
 			isa = PBXGroup;
 			children = (
 				495C9E2625AD7428004ABE4C /* ViewModel */,
-				495C9E2525AD741F004ABE4C /* Network */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -350,6 +363,7 @@
 			name = SwiftUI_MVVM_Clean_Architecture;
 			packageProductDependencies = (
 				495C9E2F25AD75AF004ABE4C /* Alamofire */,
+				495C9E7725AD883F004ABE4C /* ObjectMapper */,
 			);
 			productName = SwiftUI_MVVM_Clean_Architecture;
 			productReference = 4B8B769525A8863400C39EA2 /* SwiftUI_MVVM_Clean_Architecture.app */;
@@ -424,6 +438,7 @@
 			mainGroup = 4B8B768C25A8863300C39EA2;
 			packageReferences = (
 				495C9E2E25AD75AF004ABE4C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				495C9E7625AD883F004ABE4C /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 			);
 			productRefGroup = 4B8B769625A8863400C39EA2 /* Products */;
 			projectDirPath = "";
@@ -482,7 +497,8 @@
 				4B8B77BC25AB4E0200C39EA2 /* Navigation.swift in Sources */,
 				4B8B77C625AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift in Sources */,
 				4928222125A953940082AE2B /* DetailViewModel.swift in Sources */,
-				495C9E2A25AD7520004ABE4C /* GitHubRouter.swift in Sources */,
+				495C9E5A25AD85D8004ABE4C /* UserModel.swift in Sources */,
+				495C9E2A25AD7520004ABE4C /* DummyAPIRouter.swift in Sources */,
 				4B8B769925A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift in Sources */,
 				4B8B77C125AB4E3800C39EA2 /* DestinationHostingController.swift in Sources */,
 			);
@@ -810,6 +826,14 @@
 				minimumVersion = 5.4.1;
 			};
 		};
+		495C9E7625AD883F004ABE4C /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -817,6 +841,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 495C9E2E25AD75AF004ABE4C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		495C9E7725AD883F004ABE4C /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 495C9E7625AD883F004ABE4C /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

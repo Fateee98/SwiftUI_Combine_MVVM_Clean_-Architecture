@@ -9,6 +9,6 @@ import Foundation
 
 final class ApiConfig {
     static var url: URL {
-        return URL(string: "")
+        return URL(string: "https://dummyapi.io/data/api")!
     }
 }
