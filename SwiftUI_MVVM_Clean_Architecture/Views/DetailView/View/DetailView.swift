@@ -20,7 +20,7 @@ struct DetailView: View {
     var body: some View {
         VStack {
             List(self.viewModel.state.listUser) { user in
-                UserRow(url: .constant(user.picture ?? ""), firstName: .constant(user.firstName ?? ""), lastName: .constant(user.lastName!), email: .constant(user.email ?? ""))
+                UserRow(url: .constant(user.picture ?? ""), firstName: .constant(user.firstName ?? ""), lastName: .constant(user.lastName ?? ""), email: .constant(user.email ?? ""))
             }
             Spacer()
             Button(action: {
