@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-protocol MainViewModelProtocol: ViewModelProtocol {}
-
 final class MainViewModel {
     
     struct MainViewState {
@@ -38,7 +36,7 @@ final class MainViewModel {
     }
 }
 
-extension MainViewModel: MainViewModelProtocol {
+extension MainViewModel: ViewModelProtocol {
     func transform(_ input: MainInput) {
         input.publisher
             .sink { (text) in

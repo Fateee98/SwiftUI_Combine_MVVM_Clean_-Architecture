@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-protocol DetailViewModelProtocol: ViewModelProtocol {}
-
 final class DetailViewModel {
     
     struct DetailViewState {
