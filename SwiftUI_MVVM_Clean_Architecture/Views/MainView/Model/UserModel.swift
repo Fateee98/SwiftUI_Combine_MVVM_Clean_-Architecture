@@ -6,23 +6,38 @@
 //
 
 import Foundation
-import ObjectMapper
 
-class UserModel: Mappable {
+struct ListUserModel: Codable {
+    var total: Int?
+    var page: Int?
+    var limit: Int?
+    var offset: Int?
+    var data: [UserModel]?
+    
+    enum CodingsKey: String, CodingKey {
+        case total = "total"
+        case page = "page"
+        case limit = "limit"
+        case offset = "offset"
+        case data = "data"
+    }
+}
+
+struct UserModel: Codable, Identifiable {
     
     var id: String?
     var lastName: String?
+    var firstName: String?
     var email: String?
     var title: String?
     var picture: String?
     
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
-        id <- map["id"]
-        lastName <- map["lastName"]
-        email <- map["email"]
-        title <- map["title"]
-        picture <- map["picture"]
+    enum CodingsKey: String, CodingKey {
+        case id = "id"
+        case lastName = "lastName"
+        case firstName = "firstName"
+        case email = "email"
+        case title = "title"
+        case picture = "picture"
     }
 }

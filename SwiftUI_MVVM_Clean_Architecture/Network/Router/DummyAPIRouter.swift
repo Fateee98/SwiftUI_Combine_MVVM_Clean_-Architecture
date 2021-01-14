@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import Alamofire
 
 private let appID = "5ffd4d92d9f472640f31e58c"
 
-public enum DummyAPIRouter: URLRequestConvertible {
+public enum DummyAPIRouter: BaseRouter {
     case getUserList
     case getFullUser(userID: String)
     
@@ -23,26 +22,19 @@ public enum DummyAPIRouter: URLRequestConvertible {
         }
     }
     
-    var method: HTTPMethod {
+    var method: Method {
         return .get
     }
     
-    var parameters: [String: Any] {
+    var parameters: [String : Any] {
         return [:]
     }
     
-    public func asURLRequest() throws -> URLRequest {
+    func asURLRequest() -> URLRequest {
         let url = ApiConfig.url
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.setValue(appID, forHTTPHeaderField: "app-id")
-        
-        if method == .get {
-            return try! URLEncoding.queryString.encode(request, with: self.parameters)
-        } else if method == .post {
-            return try! JSONEncoding.default.encode(request, with: self.parameters)
-        }
-        
         return request
     }
 }

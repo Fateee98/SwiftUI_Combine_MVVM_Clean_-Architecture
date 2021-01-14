@@ -19,7 +19,6 @@ final class MainViewCoordinator: BaseNavigatorRoute<MainRounte> {
     override func prepareTransition(for route: MainRounte) {
         switch route {
         case .detail:
-//            navigation?.presentOnRoot(AnyView(DetailView(viewModel: DetailViewModel())))
             navigation?.pushView(AnyView(DetailView(viewModel: DetailViewModel())))
         default: break
         }

@@ -14,10 +14,8 @@
 		495C9E1C25AD7021004ABE4C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E1B25AD7021004ABE4C /* Constant.swift */; };
 		495C9E2125AD741A004ABE4C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E2025AD741A004ABE4C /* BaseRequest.swift */; };
 		495C9E2A25AD7520004ABE4C /* DummyAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E2925AD7520004ABE4C /* DummyAPIRouter.swift */; };
-		495C9E3025AD75AF004ABE4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 495C9E2F25AD75AF004ABE4C /* Alamofire */; };
 		495C9E5425AD78F0004ABE4C /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E5325AD78F0004ABE4C /* ApiConfig.swift */; };
 		495C9E5A25AD85D8004ABE4C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C9E5925AD85D8004ABE4C /* UserModel.swift */; };
-		495C9E7825AD883F004ABE4C /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 495C9E7725AD883F004ABE4C /* ObjectMapper */; };
 		4B8B769925A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B769825A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift */; };
 		4B8B769D25A8863600C39EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B769C25A8863600C39EA2 /* Assets.xcassets */; };
 		4B8B76A025A8863600C39EA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B769F25A8863600C39EA2 /* Preview Assets.xcassets */; };
@@ -32,6 +30,8 @@
 		4B8B77BC25AB4E0200C39EA2 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B77BB25AB4E0200C39EA2 /* Navigation.swift */; };
 		4B8B77C125AB4E3800C39EA2 /* DestinationHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B77C025AB4E3800C39EA2 /* DestinationHostingController.swift */; };
 		4B8B77C625AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B77C525AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift */; };
+		4BD5EF1725B094F200E52429 /* DummyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD5EF1625B094F200E52429 /* DummyServices.swift */; };
+		4BD5EF3D25B09F0800E52429 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4BD5EF3C25B09F0800E52429 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +81,7 @@
 		4B8B77BB25AB4E0200C39EA2 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		4B8B77C025AB4E3800C39EA2 /* DestinationHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationHostingController.swift; sourceTree = "<group>"; };
 		4B8B77C525AB4E5E00C39EA2 /* NavigationBarTitleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleConfiguration.swift; sourceTree = "<group>"; };
+		4BD5EF1625B094F200E52429 /* DummyServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				495C9E7825AD883F004ABE4C /* ObjectMapper in Frameworks */,
-				495C9E3025AD75AF004ABE4C /* Alamofire in Frameworks */,
+				4BD5EF3D25B09F0800E52429 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +176,7 @@
 		495C9E2725AD7507004ABE4C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4BD5EF1525B094E000E52429 /* Services */,
 				495C9E8225AD89C9004ABE4C /* Request */,
 				495C9E5225AD78E6004ABE4C /* Config */,
 				495C9E2825AD7511004ABE4C /* Router */,
@@ -345,6 +346,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4BD5EF1525B094E000E52429 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4BD5EF1625B094F200E52429 /* DummyServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,8 +371,7 @@
 			);
 			name = SwiftUI_MVVM_Clean_Architecture;
 			packageProductDependencies = (
-				495C9E2F25AD75AF004ABE4C /* Alamofire */,
-				495C9E7725AD883F004ABE4C /* ObjectMapper */,
+				4BD5EF3C25B09F0800E52429 /* SDWebImageSwiftUI */,
 			);
 			productName = SwiftUI_MVVM_Clean_Architecture;
 			productReference = 4B8B769525A8863400C39EA2 /* SwiftUI_MVVM_Clean_Architecture.app */;
@@ -437,8 +445,7 @@
 			);
 			mainGroup = 4B8B768C25A8863300C39EA2;
 			packageReferences = (
-				495C9E2E25AD75AF004ABE4C /* XCRemoteSwiftPackageReference "Alamofire" */,
-				495C9E7625AD883F004ABE4C /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				4BD5EF3B25B09F0800E52429 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 4B8B769625A8863400C39EA2 /* Products */;
 			projectDirPath = "";
@@ -499,6 +506,7 @@
 				4928222125A953940082AE2B /* DetailViewModel.swift in Sources */,
 				495C9E5A25AD85D8004ABE4C /* UserModel.swift in Sources */,
 				495C9E2A25AD7520004ABE4C /* DummyAPIRouter.swift in Sources */,
+				4BD5EF1725B094F200E52429 /* DummyServices.swift in Sources */,
 				4B8B769925A8863400C39EA2 /* SwiftUI_MVVM_Clean_ArchitectureApp.swift in Sources */,
 				4B8B77C125AB4E3800C39EA2 /* DestinationHostingController.swift in Sources */,
 			);
@@ -818,34 +826,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		495C9E2E25AD75AF004ABE4C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		4BD5EF3B25B09F0800E52429 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.1;
-			};
-		};
-		495C9E7625AD883F004ABE4C /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.2.0;
+				minimumVersion = 1.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		495C9E2F25AD75AF004ABE4C /* Alamofire */ = {
+		4BD5EF3C25B09F0800E52429 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 495C9E2E25AD75AF004ABE4C /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		495C9E7725AD883F004ABE4C /* ObjectMapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 495C9E7625AD883F004ABE4C /* XCRemoteSwiftPackageReference "ObjectMapper" */;
-			productName = ObjectMapper;
+			package = 4BD5EF3B25B09F0800E52429 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
