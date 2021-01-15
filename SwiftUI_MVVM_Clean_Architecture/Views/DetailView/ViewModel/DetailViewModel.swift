@@ -32,6 +32,7 @@ extension DetailViewModel: ViewModelProtocol {
     func transform(_ input: DetailViewInput) {
         input.callAPI
             .flatMap { _ in DummyServices.shared.requestDummyAPI()}
+            .receive(on: DispatchQueue.main)
             .sink { (state) in
                 print(state)
             } receiveValue: { [weak self] (data) in
